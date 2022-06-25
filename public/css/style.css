@@ -67,16 +67,19 @@
     height: 45vh;
 }
 .cont-discussion {
+    margin: 0 16px;
     margin-top: 60px;
 }
 .discussion {
     padding: 16px;
-    border: 1px solid gray;
     border-radius: 12px;
 }
-.discussion > .small-text {
+.small-text {
     margin-top: -12px;
     margin-bottom: 4px;
+}
+.comment {
+    padding: 0 5%;
 }
 @media(max-width: 670px) {
     .carousel-item > img {

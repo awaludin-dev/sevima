@@ -4,14 +4,18 @@ namespace App\Controllers;
 
 use App\Models\UsersModel;
 use App\Models\FileModel;
+use App\Models\DiscussionModel;
+use App\Models\DiscussionChatModel;
 
 class Home extends BaseController
 {
-    protected $userModel, $fileModel;
+    protected $userModel, $fileModel, $discussionModel, $discussionChatModel;
     public function __construct()
     {
         $this->userModel = new UsersModel();
         $this->fileModel = new FileModel();
+        $this->discussionModel = new DiscussionModel();
+        $this->discussionChatModel = new DiscussionChatModel();
     }
     public function index()
     {
@@ -93,10 +97,56 @@ class Home extends BaseController
     }
     public function myDiscussion()
     {
-        return view('myDiscussion');
+        $discussions = $this->discussionModel->where(['owner_id' => session()->get('id')])->findAll();
+        $data = [
+            'discussions' => $discussions
+        ];
+        return view('myDiscussion', $data);
     }
     public function discussion()
     {
-        return view('discussion');
+        $discussions = $this->discussionModel->findAll();
+        $data = [
+            'discussions' => $discussions
+        ];
+        return view('discussion', $data);
+    }
+    public function addDiscussion()
+    {
+        return view('addDiscussion');
+    }
+    public function addDiscussionProcess()
+    {
+        $this->discussionModel->save([
+            'judul' => $this->request->getVar('judul'),
+            'pengirim' => session()->get('name'),
+            'isi' => $this->request->getVar('isi'),
+            'owner_id' => session()->get('id'),
+        ]);
+
+        session()->setFlashdata('pesan', 'Data berhasil ditambah!');
+
+        return redirect()->to(base_url('myDiscussion'));
+    }
+    public function viewDiscussion($id)
+    {
+        $discussion = $this->discussionModel->where(['id' => $id])->first();
+        $comments = $this->discussionChatModel->where(['discussion_id' => $id])->findAll();
+        $data = [
+            'discussion' => $discussion,
+            'comments' => $comments
+        ];
+        return view('viewDiscussion', $data);
+    }
+    public function addComment()
+    {
+        $this->discussionChatModel->save([
+            'pengirim' => $this->request->getVar('pengirim'),
+            'isi' => $this->request->getVar('isi'),
+            'discussion_id' => $this->request->getVar('discussion_id'),
+            'owner_id' => session()->get('id'),
+        ]);
+
+        return redirect()->to(base_url('discussion'));
     }
 }

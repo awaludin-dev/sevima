@@ -4,7 +4,7 @@ namespace App\Database\Migrations;
 
 use CodeIgniter\Database\Migration;
 
-class User extends Migration
+class File extends Migration
 {
     public function up()
     {
@@ -15,33 +15,21 @@ class User extends Migration
                 'unsigned'       => true,
                 'auto_increment' => true,
             ],
-            'username'          => [
-                'type'           => 'VARCHAR',
-                'constraint'     => '100',
-            ],
-            'password'       => [
-                'type'           => 'VARCHAR',
-                'constraint'     => '100',
-            ],
-            'email'       => [
-                'type'           => 'VARCHAR',
-                'constraint'     => '100',
-            ],
-            'name'       => [
-                'type'           => 'VARCHAR',
-                'constraint'     => '100',
-            ],
-            'photo'       => [
+            'judul'          => [
                 'type'           => 'VARCHAR',
                 'constraint'     => '64',
             ],
-            'tempat_lahir'       => [
+            'ringkasan'       => [
                 'type'           => 'VARCHAR',
-                'constraint'     => '64',
+                'constraint'     => '100',
             ],
-            'tanggal_lahir' => [
-                'type'           => 'DATE',
-                'null'           => true,
+            'file'       => [
+                'type'           => 'VARCHAR',
+                'constraint'     => '100',
+            ],
+            'id_owner'       => [
+                'type'           => 'INT',
+                'constraint'     => 5,
             ],
             'created_at' => [
                 'type'           => 'DATETIME',
@@ -53,11 +41,11 @@ class User extends Migration
             ]
         ]);
         $this->forge->addPrimaryKey('id', true);
-        $this->forge->createTable('users');
+        $this->forge->createTable('file');
     }
 
     public function down()
     {
-        $this->forge->dropTable('users');
+        $this->forge->dropTable('file');
     }
 }

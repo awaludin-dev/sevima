@@ -73,9 +73,12 @@ class Auth extends BaseController
         if ($dataUser) {
             if (password_verify($password, $dataUser->password)) {
                 session()->set([
+                    'id' => $dataUser->id,
                     'username' => $dataUser->username,
                     'name' => $dataUser->name,
                     'photo' => $dataUser->photo,
+                    'tempat_lahir' => $dataUser->tempat_lahir,
+                    'tanggal_lahir' => $dataUser->tanggal_lahir,
                     'logged_in' => TRUE
                 ]);
                 return redirect()->to(base_url());

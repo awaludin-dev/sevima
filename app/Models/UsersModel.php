@@ -10,5 +10,5 @@ class UsersModel extends Model
     protected $primaryKey = "id";
     protected $returnType = "object";
     protected $useTimestamps = true;
-    protected $allowedFields = ['username', 'password', 'name', 'photo', 'tempat_lahir', 'tanggal_lahir'];
+    protected $allowedFields = ['username', 'password', 'email', 'name', 'photo', 'tempat_lahir', 'tanggal_lahir'];
 }

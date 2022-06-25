@@ -16,7 +16,7 @@
                                 <form class="user" action="<?= base_url('registerProcess'); ?>">
                                     <?= csrf_field() ?>
                                     <div class="form-group">
-                                        <input type="text" class="form-control form-control-user <?php if (session('errors.username')) : ?>is-invalid<?php endif ?>" id="exampleInputUsername" placeholder="Username" value="<?= old('username') ?>" name="username">
+                                        <input type="text" class="form-control form-control-user <?php if (session('errors.username')) : ?>is-invalid<?php endif ?>" id="exampleInputUsername" placeholder="Username" value="<?= old('username') ?>" name="username" autofocus>
                                     </div>
                                     <div class="form-group">
                                         <input type="email" class="form-control form-control-user <?php if (session('errors.email')) : ?>is-invalid<?php endif ?>" id="exampleInputEmail" placeholder="Email" value="<?= old('email') ?>" name="email">

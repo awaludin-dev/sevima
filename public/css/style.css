@@ -1,0 +1,29 @@
+@media (max-width: 576px) {
+    .brand {
+        text-align: center;
+        margin-top: -55px;
+    }
+    .brand > img {
+        width: 300px;
+    }
+    .brand > p {
+        text-align: justify;
+        margin-top: -66px;
+    }
+    .developer {
+        margin-top: 24px;
+    }
+}
+.developer > h1 {
+    text-align: center;
+    margin-bottom: 12px;
+}
+.list-developer {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+.list-developer > .card > img {
+    height: 300px;
+}

@@ -53,7 +53,8 @@ class Auth extends BaseController
             'username' => $this->request->getVar('username'),
             'email' => $this->request->getVar('email'),
             'password' => password_hash($this->request->getVar('password'), PASSWORD_BCRYPT),
-            'name' => $this->request->getVar('name')
+            'name' => $this->request->getVar('name'),
+            'photo' => 'profile.jpg'
         ]);
         return redirect()->to('/login');
     }
@@ -74,6 +75,7 @@ class Auth extends BaseController
                 session()->set([
                     'username' => $dataUser->username,
                     'name' => $dataUser->name,
+                    'photo' => $dataUser->photo,
                     'logged_in' => TRUE
                 ]);
                 return redirect()->to(base_url());

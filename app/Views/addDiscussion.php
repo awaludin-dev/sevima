@@ -12,7 +12,7 @@
             <textarea class="form-control summernote" id="isi" name="isi"><?= old('isi'); ?></textarea>
         </div>
         <button type="submit" class="btn btn-primary btn-user btn-block">
-            Add File
+            Add
         </button>
     </form>
 </div>

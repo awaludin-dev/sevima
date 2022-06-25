@@ -7,7 +7,7 @@ use CodeIgniter\Model;
 class UsersModel extends Model
 {
     protected $table = "users";
-    protected $primaryKey = "username";
+    protected $primaryKey = "id";
     protected $returnType = "object";
     protected $useTimestamps = true;
     protected $allowedFields = ['username', 'password', 'name', 'photo', 'tempat_lahir', 'tanggal_lahir'];

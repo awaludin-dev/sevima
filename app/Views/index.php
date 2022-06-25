@@ -9,7 +9,7 @@
 </head>
 
 <body>
-
+    <h1>Hai ! <?= session()->get('name') ? session()->get('name') : 'Tamu'; ?></h1>
 </body>
 
 </html>

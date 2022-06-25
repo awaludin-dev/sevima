@@ -1,9 +1,21 @@
+.main {
+    margin: 0 16px;
+    margin-top: 56px;
+}
 .img-user {
     width: 40px;
     height: 40px;
     border-radius: 50%;
     border: 1px solid #fff;
     padding: 1px;
+}
+.profile {
+    width: 50%;
+}
+.img-profile {
+    width: 200px;
+    margin: 0 calc(50% - 100px);
+    border-radius: 50%;
 }
 .carousel-item > img {
     height: 100%;
@@ -27,5 +39,8 @@
 @media(max-width: 670px) {
     .carousel-item > img {
         max-height: 240px;
+    }
+    .profile {
+        width: 75%;
     }
 }

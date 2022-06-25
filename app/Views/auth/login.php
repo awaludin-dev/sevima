@@ -20,7 +20,7 @@
                                 <form class="user" action="<?= base_url('loginProcess'); ?>">
                                     <?= csrf_field() ?>
                                     <div class="form-group">
-                                        <input type="text" class="form-control form-control-user <?php if (session('errors.login')) : ?>is-invalid<?php endif ?>" id="exampleInputUsername" aria-describedby="usernameHelp" placeholder="Username" name="username">
+                                        <input type="text" class="form-control form-control-user <?php if (session('errors.login')) : ?>is-invalid<?php endif ?>" id="exampleInputUsername" aria-describedby="usernameHelp" placeholder="Username" name="username" autofocus>
                                         <div class="invalid-feedback">
                                             <?= session('errors.username') ?>
                                         </div>

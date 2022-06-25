@@ -12,6 +12,7 @@
                 <a href="<?= base_url('viewDiscussion/' . $discussion->id); ?>" class="btn btn-primary">Lihat</a>
                 <?php if ($discussion->pengirim == session()->get('name')) : ?>
                     <a href="<?= base_url('editDiscussion/' . $discussion->id); ?>" class="btn btn-success">Edit</a>
+                    <a href="<?= base_url('deleteDiscussion/' . $discussion->id); ?>" class="btn btn-danger">Delete</a>
                 <?php endif; ?>
             </div>
         <?php endforeach; ?>

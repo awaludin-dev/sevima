@@ -9,12 +9,12 @@
                 <li class="nav-item">
                     <a class="nav-link active" aria-current="page" href="<?= base_url(); ?>">Home</a>
                 </li>
-                <li class="nav-item">
+                <!-- <li class="nav-item">
                     <a class="nav-link" href="#content">Content</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#creator">Creator</a>
-                </li>
+                </li> -->
                 <li class="nav-item">
                     <a class="nav-link" href="<?= base_url('discussion'); ?>">Discussion</a>
                 </li>

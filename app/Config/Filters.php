@@ -69,5 +69,7 @@ class Filters extends BaseConfig
      *
      * @var array
      */
-    public $filters = [];
+    public $filters = [
+        'userFilter' => ['before' => ['profile', 'updateProfile', 'files', 'addFiles', 'addFilesProcess', 'deleteFiles/*', 'myDiscussion', 'addDiscussion', 'addDiscussionProcess', 'addComment', 'deleteDiscussion/*', 'editDiscussion/*', 'editDiscussionProcess/*', 'logout']]
+    ];
 }

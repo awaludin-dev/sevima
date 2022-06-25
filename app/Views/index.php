@@ -9,23 +9,23 @@
     </div>
     <div class="carousel-inner">
         <div class="carousel-item active">
-            <img src="https://dmn-dallas-news-prod.cdn.arcpublishing.com/resizer/loyhpLKMDpT7Qawgo355Zy78Cds=/1660x934/smart/filters:no_upscale()/cloudfront-us-east-1.images.arcpublishing.com/dmn/VICAO2KR2BC3FHCLH27Z3OIVSU.jpg" class="d-block w-100" alt="Group Chat">
+            <img src="<?= base_url('img/pic1.jpg'); ?>" class="d-block w-100" alt="Group Chat">
             <div class="carousel-caption d-none d-md-block text-black">
-                <h5>Group Chat</h5>
-                <p>Make a group chat and share to your friends. You can interaction with your friends in group chats.</p>
+                <h5>Udinesia</h5>
+                <p>A website app that can do a discussion group. There are 2 feature inside, Discussion Chat and Manager File.</p>
             </div>
         </div>
         <div class="carousel-item">
-            <img src="https://blog.qontak.com/wp-content/uploads/2020/08/Tidio-Live-chat.webp" class="d-block w-100" alt="Chat">
+            <img src="<?= base_url('img/pic2.png'); ?>" class="d-block w-100" alt="Chat">
             <div class="carousel-caption d-none d-md-block text-black">
-                <h5>Personal Chat</h5>
-                <p>Make a new connection with some chat. Ask the person and study together.</p>
+                <h5>Discussion Chat</h5>
+                <p>Share your problem and search the solution. You can be the one that give a solution to other people.</p>
             </div>
         </div>
         <div class="carousel-item">
-            <img src="https://e-ujian.id/wp-content/uploads/2020/12/form-upload-materi.png" class="d-block w-100" alt="Upload Materi">
+            <img src="<?= base_url('img/pic3.png'); ?>" class="d-block w-100" alt="Upload Materi">
             <div class="carousel-caption d-none d-md-block text-black">
-                <h5>Upload Matery</h5>
+                <h5>File Manager</h5>
                 <p>Upload a matery and share to other people. You can get the other matery too.</p>
             </div>
         </div>
@@ -40,24 +40,24 @@
     </button>
 </div>
 <div class="group">
-    <img src="https://dmn-dallas-news-prod.cdn.arcpublishing.com/resizer/loyhpLKMDpT7Qawgo355Zy78Cds=/1660x934/smart/filters:no_upscale()/cloudfront-us-east-1.images.arcpublishing.com/dmn/VICAO2KR2BC3FHCLH27Z3OIVSU.jpg" alt="Group Chat">
+    <img src="<?= base_url('img/pic1.jpg'); ?>" alt="Group Chat">
     <div class="desc-group">
-        <h3>Group Chat</h3>
-        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Reiciendis asperiores quaerat fuga praesentium consequuntur nihil dolore sit dolorem doloribus beatae debitis a, architecto eum eaque quia voluptas itaque facere repellat soluta voluptate. Ullam ea laborum, eius incidunt porro consequatur aperiam vitae! Iusto nesciunt, cum provident nam soluta inventore ea nemo.</p>
+        <h3>Udinesia</h3>
+        <p>A website app that can do a discussion group. There are 2 feature inside, Discussion Chat and Manager File. You can visit <a href="<?= base_url(); ?>">this link</a>.</p>
     </div>
 </div>
 <div class="group">
-    <img src="https://blog.qontak.com/wp-content/uploads/2020/08/Tidio-Live-chat.webp" alt="Chat">
+    <img src="<?= base_url('img/pic2.png'); ?>" alt="Chat">
     <div class="desc-group">
-        <h3>Personal Chat</h3>
-        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Reiciendis asperiores quaerat fuga praesentium consequuntur nihil dolore sit dolorem doloribus beatae debitis a, architecto eum eaque quia voluptas itaque facere repellat soluta voluptate. Ullam ea laborum, eius incidunt porro consequatur aperiam vitae! Iusto nesciunt, cum provident nam soluta inventore ea nemo.</p>
+        <h3>Discussion Chat</h3>
+        <p>Share your problem and search the solution. You can be the one that give a solution to other people. You can visit <a href="<?= base_url('discussion'); ?>">this link</a>.</p>
     </div>
 </div>
 <div class="group">
-    <img src="https://e-ujian.id/wp-content/uploads/2020/12/form-upload-materi.png" alt="Upload Materi">
+    <img src="<?= base_url('img/pic3.png'); ?>" alt="Upload Materi">
     <div class="desc-group">
-        <h3>Upload Matery</h3>
-        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Reiciendis asperiores quaerat fuga praesentium consequuntur nihil dolore sit dolorem doloribus beatae debitis a, architecto eum eaque quia voluptas itaque facere repellat soluta voluptate. Ullam ea laborum, eius incidunt porro consequatur aperiam vitae! Iusto nesciunt, cum provident nam soluta inventore ea nemo.</p>
+        <h3>File Manager</h3>
+        <p>Upload a matery and share to other people. You can get the other matery too. You can visit <a href="<?= base_url('files'); ?>">this link</a>.</p>
     </div>
 </div>
 <?= $this->endSection(); ?>

@@ -19,12 +19,16 @@ class Home extends BaseController
     }
     public function index()
     {
-        return view('index');
+        $data = [
+            'judul' => 'Udinesia'
+        ];
+        return view('index', $data);
     }
     public function profile()
     {
         $users = $this->userModel->where(['username' => session()->get('username')])->first();
         $data = [
+            'judul' => 'Profile - Udinesia',
             'users' => $users
         ];
         return view('profile', $data);
@@ -61,13 +65,17 @@ class Home extends BaseController
     {
         $files = $this->fileModel->where(['id_owner' => session()->get('id')])->findAll();
         $data = [
+            'judul' => 'File Manager - Udinesia',
             'files' => $files
         ];
         return view('files', $data);
     }
     public function addFiles()
     {
-        return view('addFiles');
+        $data = [
+            'judul' => 'Udinesia'
+        ];
+        return view('addFiles', $data);
     }
     public function addFilesProcess()
     {
@@ -99,6 +107,7 @@ class Home extends BaseController
     {
         $discussions = $this->discussionModel->where(['owner_id' => session()->get('id')])->findAll();
         $data = [
+            'judul' => 'My Discussion - Udinesia',
             'discussions' => $discussions
         ];
         return view('myDiscussion', $data);
@@ -107,13 +116,17 @@ class Home extends BaseController
     {
         $discussions = $this->discussionModel->findAll();
         $data = [
+            'judul' => 'Discussion - Udinesia',
             'discussions' => $discussions
         ];
         return view('discussion', $data);
     }
     public function addDiscussion()
     {
-        return view('addDiscussion');
+        $data = [
+            'judul' => 'Add Discussion - Udinesia'
+        ];
+        return view('addDiscussion', $data);
     }
     public function addDiscussionProcess()
     {
@@ -133,6 +146,7 @@ class Home extends BaseController
         $discussion = $this->discussionModel->where(['id' => $id])->first();
         $comments = $this->discussionChatModel->where(['discussion_id' => $id])->findAll();
         $data = [
+            'judul' => $discussion->judul . ' - Udinesia',
             'discussion' => $discussion,
             'comments' => $comments
         ];
@@ -148,5 +162,37 @@ class Home extends BaseController
         ]);
 
         return redirect()->to(base_url('discussion'));
+    }
+    public function deleteDiscussion($id)
+    {
+        $comments = $this->discussionChatModel->where(['discussion_id' => $id])->findAll();
+        $this->discussionModel->delete($id);
+        foreach ($comments as $comment) {
+            $this->discussionChatModel->delete($comment->id);
+        }
+        return redirect()->to(base_url('discussion'));
+    }
+    public function editDiscussion($id)
+    {
+        $discussion = $this->discussionModel->where(['id' => $id])->first();
+        $data = [
+            'judul' => 'Edit Discussion - Udinesia',
+            'discussion' => $discussion
+        ];
+        return view('editDiscussion', $data);
+    }
+    public function editDiscussionProcess($id)
+    {
+        $this->discussionModel->save([
+            'id' => $id,
+            'judul' => $this->request->getVar('judul'),
+            'pengirim' => session()->get('name'),
+            'isi' => $this->request->getVar('isi'),
+            'owner_id' => session()->get('id'),
+        ]);
+
+        session()->setFlashdata('pesan', 'Data berhasil diubah!');
+
+        return redirect()->to(base_url('myDiscussion'));
     }
 }

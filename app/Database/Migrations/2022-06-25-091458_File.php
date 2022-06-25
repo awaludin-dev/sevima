@@ -19,9 +19,9 @@ class File extends Migration
                 'type'           => 'VARCHAR',
                 'constraint'     => '64',
             ],
-            'ringkasan'       => [
+            'slug'       => [
                 'type'           => 'VARCHAR',
-                'constraint'     => '100',
+                'constraint'     => '64',
             ],
             'file'       => [
                 'type'           => 'VARCHAR',

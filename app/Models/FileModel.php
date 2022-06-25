@@ -10,5 +10,5 @@ class FileModel extends Model
     protected $primaryKey = "id";
     protected $returnType = "object";
     protected $useTimestamps = true;
-    protected $allowedFields = ['judul', 'ringkasan', 'file', 'id_owner'];
+    protected $allowedFields = ['judul', 'slug', 'file', 'id_owner'];
 }

@@ -3,16 +3,16 @@
 <?= $this->section('content'); ?>
 <form action="<?= base_url('updateProfile'); ?>" class="user d-flex justify-content-center" enctype="multipart/form-data" method="post">
     <?= csrf_field(); ?>
+    <input type="hidden" class="form-control" id="inputGroupFile02" name="photoLama">
     <div class="form-group profile">
         <img src="<?= base_url('img/' . session()->get('photo')); ?>" class="img-thumbnail img-profile mb-3 mt-3 img-preview" alt="...">
-        <input type="hidden" class="form-control" id="inputGroupFile02" name="photoLama">
         <div class="input-group mb-3">
             <input type="file" class="form-control" id="sampul" name="sampul" onchange="previewImg()">
             <label class="input-group-text" for="sampul">Upload</label>
         </div>
         <div class="mb-3">
             <label for="exampleInputUsername1" class="form-label">Username</label>
-            <input type="text" class="form-control" id="exampleInputUsername1" aria-describedby="usernameHelp" value="<?= $users->username; ?>" name="username">
+            <input type="text" class="form-control" id="exampleInputUsername1" aria-describedby="usernameHelp" value="<?= $users->username; ?>" name="username" disabled>
         </div>
         <div class="mb-3">
             <label for="exampleInputName1" class="form-label">Name</label>

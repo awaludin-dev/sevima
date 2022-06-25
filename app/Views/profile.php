@@ -1,7 +1,7 @@
 <?= $this->extend('template/templateHome'); ?>
 
 <?= $this->section('content'); ?>
-<form action="<?= base_url('updateProfile'); ?>" class="user d-flex justify-content-center" enctype="multipart/form-data">
+<form action="<?= base_url('updateProfile'); ?>" class="user d-flex justify-content-center" enctype="multipart/form-data" method="post">
     <?= csrf_field(); ?>
     <div class="form-group profile">
         <img src="<?= base_url('img/' . session()->get('photo')); ?>" class="img-thumbnail img-profile mb-3 mt-3 img-preview" alt="...">

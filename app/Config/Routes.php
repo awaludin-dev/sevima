@@ -38,6 +38,7 @@ $routes->set404Override();
 $routes->get('/', 'Home::index');
 $routes->get('/profile', 'Home::profile');
 $routes->get('/updateProfile', 'Home::updateProfile');
+$routes->get('/files', 'Home::files');
 $routes->get('/register', 'Auth::register');
 $routes->get('/registerProcess', 'Auth::registerProcess');
 $routes->get('/login', 'Auth::login');

@@ -39,6 +39,27 @@
 .desc-group > p {
     text-align: justify;
 }
+.cont-files {
+    padding-top: 48px;
+}
+.files {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.file {
+    width: 300px;
+}
+.file > img {
+    width: 100%;
+}
+.text-file {
+    margin: 0 24px;
+    margin-top: -222px;
+    margin-bottom: 144px;
+    text-align: justify;
+    text-align: center;
+}
 @media(max-width: 670px) {
     .carousel-item > img {
         max-height: 240px;

@@ -15,6 +15,9 @@
                 <li class="nav-item">
                     <a class="nav-link" href="#creator">Creator</a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="<?= base_url('discussion'); ?>">Discussion</a>
+                </li>
                 <!-- <li class="nav-item">
                     <a class="nav-link disabled">Disabled</a>
                 </li> -->
@@ -28,8 +31,7 @@
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="userDropdown">
                             <li><a class="dropdown-item" href="<?= base_url('profile'); ?>">Profile</a></li>
-                            <li><a class="dropdown-item" href="#">Group</a></li>
-                            <li><a class="dropdown-item" href="#">Chat</a></li>
+                            <li><a class="dropdown-item" href="<?= base_url('myDiscussion'); ?>">My Discussion</a></li>
                             <li><a class="dropdown-item" href="<?= base_url('files'); ?>">Files</a></li>
                             <li>
                                 <hr class="dropdown-divider">

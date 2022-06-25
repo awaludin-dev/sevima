@@ -42,6 +42,8 @@ $routes->get('/files', 'Home::files');
 $routes->get('/addFiles', 'Home::addFiles');
 $routes->post('/addFilesProcess', 'Home::addFilesProcess');
 $routes->get('/deleteFiles/(:num)', 'Home::deleteFiles/$1');
+$routes->get('/discussion', 'Home::discussion');
+$routes->get('/myDiscussion', 'Home::myDiscussion');
 $routes->get('/register', 'Auth::register');
 $routes->get('/registerProcess', 'Auth::registerProcess');
 $routes->get('/login', 'Auth::login');

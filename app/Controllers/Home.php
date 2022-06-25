@@ -91,4 +91,12 @@ class Home extends BaseController
         session()->setFlashdata('pesan', 'Data berhasil dihapus!');
         return redirect()->to(base_url('files'));
     }
+    public function myDiscussion()
+    {
+        return view('myDiscussion');
+    }
+    public function discussion()
+    {
+        return view('discussion');
+    }
 }
